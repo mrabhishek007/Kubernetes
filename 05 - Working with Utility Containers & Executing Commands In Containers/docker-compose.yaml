@@ -1,0 +1,14 @@
+version: "3.8"
+services:
+  node-utils:
+    image: node:18-alpine
+    working_dir: "/app"
+    #  It will accept npm as default executable when node-utils service is run.
+    #  EX :docker-compose run node-utils init will internally run npm init inside container
+    #  entrypoint: ["npm"]
+    stdin_open: true
+    tty: true
+    volumes:
+      - ./project:/app
+
+
